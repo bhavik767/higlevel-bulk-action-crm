@@ -7,7 +7,7 @@ The Bulk Action Platform is a system designed to handle bulk operations on vario
 - [Introduction](#introduction)
 - [Features](#features)
 - [Endpoints](#endpoints)
-- [Live Version for Testing](#live-version)
+- [Documentation](#documentation)
 - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
