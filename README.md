@@ -323,13 +323,13 @@ Before setting up the Bulk Action Platform, ensure you have the following instal
 1. Clone the repository:
 
    ```bash
-   https://github.com/bhavik767/crm-bulk-action-platform.git
+   https://github.com/bhavik767/higlevel-bulk-action-crm
    ```
 
 1. Navigate to the project directory:
 
    ```bash
-   cd crm-bulk-action-platform
+   cd higlevel-bulk-action-platform-crm
    ```
 
 1. Install dependencies:
