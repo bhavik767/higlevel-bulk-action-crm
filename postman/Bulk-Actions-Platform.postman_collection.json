@@ -1,0 +1,1236 @@
+{
+	"info": {
+		"_postman_id": "f2b00857-cd31-454d-ada3-5bb33ba03f0a",
+		"name": "Bulk-Actions-Platform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36170959"
+	},
+	"item": [
+		{
+			"name": "Create New Bulk Action",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"console.log('response is: ', response);\r",
+							"console.log('id is: ', response._id)\r",
+							"const actionId = response?._id || '';\r",
+							"pm.globals.set(\"actionId\", actionId);\r",
+							"pm.environment.set(\"actionId\", actionId);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": \"1234567\",\r\n    \"entityType\": \"Contact\",\r\n    \"entitiesToUpdate\": [\r\n        {\r\n            \"_id\": \"666813f5278b6fc12bca7250\",\r\n            \"name\": \"Gail Macejkovic I\",\r\n            \"email\": \"Eleanore2234@hotmail.com\",\r\n            \"version\": 0\r\n        },\r\n        {\r\n            \"_id\": \"666813f5278b6fc12bca7251\",\r\n            \"name\": \"Jarret Heller\",\r\n            \"Phone\": \"1-403-479-8661 0\",\r\n            \"version\": 0\r\n        },\r\n        {\r\n            \"_id\": \"666813f5278b6fc12bca7252\",\r\n            \"name\": \"Sherry Prosacco II\",\r\n            \"email\": \"Emerson.Hessel9@hotmail.com\",\r\n            \"version\": 0\r\n        },\r\n        {\r\n            \"_id\": \"666813f5278b6fc12bca7253\",\r\n            \"name\": \"Jarret Heller\",\r\n            \"Phone\": \"349-262 29229\",\r\n            \"version\": 0\r\n        }\r\n    ]\r\n    //   \"scheduledFor\": \"2025-06-15T18:36:55.580Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/bulk-actions",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"bulk-actions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create New Bulk Action - Contact",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountId\": \"1234567\",\r\n    \"entityType\": \"Contact\",\r\n    \"entitiesToUpdate\": [\r\n        {\r\n            \"_id\": \"666813f5278b6fc12bca7250\",\r\n            \"name\": \"Gail Macejkovic I\",\r\n            \"email\": \"Eleanore2234@hotmail.com\",\r\n            \"version\": 0\r\n        },\r\n        {\r\n            \"_id\": \"666813f5278b6fc12bca7251\",\r\n            \"name\": \"Jarret Heller\",\r\n            \"Phone\": \"1-403-479-8661 0\",\r\n            \"version\": 0\r\n        },\r\n        {\r\n            \"_id\": \"666813f5278b6fc12bca7252\",\r\n            \"name\": \"Sherry Prosacco II\",\r\n            \"email\": \"Emerson.Hessel9@hotmail.com\",\r\n            \"version\": 0\r\n        },\r\n        {\r\n            \"_id\": \"666813f5278b6fc12bca7253\",\r\n            \"name\": \"Jarret Heller\",\r\n            \"Phone\": \"349-262 29229\",\r\n            \"version\": 0\r\n        }\r\n    ]\r\n    //   \"scheduledFor\": \"2025-06-15T18:36:55.580Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/bulk-actions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bulk-actions"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "483"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1e3-LxcKYeP9V1Hf2KJb5yaZrZ0imAQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Jun 2025 13:03:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accountId\": \"1234567\",\n    \"entityType\": \"Contact\",\n    \"entitiesToUpdate\": [\n        {\n            \"_id\": \"666813f5278b6fc12bca7250\",\n            \"name\": \"Gail Macejkovic I\",\n            \"email\": \"Eleanore2234@hotmail.com\",\n            \"version\": 0\n        },\n        {\n            \"_id\": \"666813f5278b6fc12bca7251\",\n            \"name\": \"Jarret Heller\",\n            \"Phone\": \"1-403-479-8661 0\",\n            \"version\": 0\n        },\n        {\n            \"_id\": \"666813f5278b6fc12bca7252\",\n            \"name\": \"Sherry Prosacco II\",\n            \"email\": \"Emerson.Hessel9@hotmail.com\",\n            \"version\": 0\n        },\n        {\n            \"_id\": \"666813f5278b6fc12bca7253\",\n            \"name\": \"Jarret Heller\",\n            \"Phone\": \"349-262 29229\",\n            \"version\": 0\n        }\n    ],\n    \"status\": \"queued\",\n    \"successCount\": 0,\n    \"failureCount\": 0,\n    \"skippedCount\": 0,\n    \"actionErrors\": [],\n    \"scheduledFor\": null,\n    \"sequenceNumber\": 0,\n    \"_id\": \"66685f3cd8aed2f1bbeea901\",\n    \"createdAt\": \"2025-06-11T14:29:16.139Z\",\n    \"__v\": 0\n}"
+				},
+				{
+					"name": "Create New Bulk Action - Task",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountId\": \"90230238020\",\r\n  \"entityType\": \"Task\",\r\n  \"entitiesToUpdate\": [\r\n      {\r\n          \"_id\": \"6666511bcb80be240910405a\",\r\n          \"title\": \"Call Mohit\",\r\n          \"description\": \"Setup a call with Mohit tomorrow at 11AM\",\r\n          \"version\": 0\r\n      },\r\n      {\r\n          \"_id\": \"6666511bcb80be240910405b\",\r\n          \"title\": \"Interview with Pankaj\",\r\n          \"description\": \"Setup an interview with Pankaj on 15th of June 3pm\",\r\n          \"version\": 1\r\n      }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/bulk-actions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bulk-actions"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "545"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"221-oQ8KxBvjQifZbC6azPl/7oNo6Wo\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Jun 2025 13:08:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accountId\": \"90230238020\",\n    \"entityType\": \"Task\",\n    \"entitiesToUpdate\": [\n        {\n            \"_id\": \"6666511bcb80be240910405a\",\n            \"title\": \"Call Mohit\",\n            \"description\": \"Setup a call with Mohit tomorrow at 11AM\",\n            \"version\": 0\n        },\n        {\n            \"_id\": \"6666511bcb80be240910405b\",\n            \"title\": \"Interview with Pankaj\",\n            \"description\": \"Setup an interview with Pankaj on 15th of June 3pm\",\n            \"version\": 1\n        }\n    ],\n    \"status\": \"queued\",\n    \"successCount\": 0,\n    \"failureCount\": 0,\n    \"skippedCount\": 0,\n    \"actionErrors\": [],\n    \"scheduledFor\": null,\n    \"sequenceNumber\": 0,\n    \"_id\": \"6666fadd3a5211c73c123e47\",\n    \"createdAt\": \"2025-06-10T13:08:45.230Z\",\n    \"__v\": 0\n}"
+				},
+				{
+					"name": "Create New Bulk Action - Task Scheduled",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountId\": \"90230238020\",\r\n    \"entityType\": \"Task\",\r\n    \"entitiesToUpdate\": [\r\n        {\r\n            \"_id\": \"66685aab9b4eaab541c209c0\",\r\n            \"title\": \"Call Mohit\",\r\n            \"description\": \"Setup a call with Mohit on 20th of June at 11AM\",\r\n            \"version\": 0\r\n        },\r\n        {\r\n            \"_id\": \"66685aab9b4eaab541c209c1\",\r\n            \"title\": \"Interview with Pankaj\",\r\n            \"description\": \"Setup an interview with Pankaj on 15th of June 3pm\",\r\n            \"version\": 0\r\n        },\r\n        {\r\n            \"_id\": \"66685aab9b4eaab541c209c2\",\r\n            \"title\": \"Title Random\",\r\n            \"description\": \"Description for random title task\",\r\n            \"version\": 1\r\n        }\r\n    ],\r\n    \"scheduledFor\": \"2025-06-15T15:30:55.000Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/bulk-actions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bulk-actions"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "574"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"23e-rN7kJj75cyLYSz62jgQ+ZhsPqec\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Jun 2025 13:11:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accountId\": \"90230238020\",\n    \"entityType\": \"Task\",\n    \"entitiesToUpdate\": [\n        {\n            \"_id\": \"66685aab9b4eaab541c209c0\",\n            \"title\": \"Call Mohit\",\n            \"description\": \"Setup a call with Mohit on 20th of June at 11AM\",\n            \"version\": 0\n        },\n        {\n            \"_id\": \"66685aab9b4eaab541c209c1\",\n            \"title\": \"Interview with Pankaj\",\n            \"description\": \"Setup an interview with Pankaj on 15th of June 3pm\",\n            \"version\": 0\n        },\n        {\n            \"_id\": \"66685aab9b4eaab541c209c2\",\n            \"title\": \"Title Random\",\n            \"description\": \"Description for random title task\",\n            \"version\": 1\n        }\n    ],\n    \"status\": \"queued\",\n    \"successCount\": 0,\n    \"failureCount\": 0,\n    \"skippedCount\": 0,\n    \"actionErrors\": [],\n    \"scheduledFor\": \"2025-06-15T15:30:55.000Z\",\n    \"sequenceNumber\": 0,\n    \"_id\": \"666861f3d8aed2f1bbeea95d\",\n    \"createdAt\": \"2025-06-11T14:40:51.537Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Bulk Actions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/bulk-actions",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"bulk-actions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Bulk Actions",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/bulk-actions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bulk-actions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2245"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8c5-7S9b9k8BPTs7OKPoLhrjAc7qNjs\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Jun 2025 13:11:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"actions\": [\n            {\n                \"accountId\": \"12345\",\n                \"bulkActionId\": \"6666bd23505b70d9d1a782c3\",\n                \"entityType\": \"Contact\",\n                \"status\": \"completed\",\n                \"successCount\": 0,\n                \"failureCount\": 0,\n                \"skippedCount\": 1,\n                \"scheduledFor\": null,\n                \"createdAt\": \"2025-06-10T08:45:23.509Z\"\n            },\n            {\n                \"accountId\": \"12345\",\n                \"bulkActionId\": \"6666bd6a72778272b26d26d8\",\n                \"entityType\": \"Contact\",\n                \"status\": \"queued\",\n                \"successCount\": 0,\n                \"failureCount\": 0,\n                \"skippedCount\": 0,\n                \"scheduledFor\": null,\n                \"createdAt\": \"2025-06-10T08:46:34.661Z\"\n            },\n            {\n                \"accountId\": \"12345\",\n                \"bulkActionId\": \"6666bdc1c279a5ab8aa5cad5\",\n                \"entityType\": \"Contact\",\n                \"status\": \"completed\",\n                \"successCount\": 0,\n                \"failureCount\": 0,\n                \"skippedCount\": 1,\n                \"scheduledFor\": null,\n                \"createdAt\": \"2025-06-10T08:48:01.631Z\"\n            },\n            {\n                \"accountId\": \"12345\",\n                \"bulkActionId\": \"6666be1ea9e6ecdc94bd3a6d\",\n                \"entityType\": \"Contact\",\n                \"status\": \"completed\",\n                \"successCount\": 0,\n                \"failureCount\": 0,\n                \"skippedCount\": 1,\n                \"scheduledFor\": null,\n                \"createdAt\": \"2025-06-10T08:49:34.367Z\"\n            },\n            {\n                \"accountId\": \"12345\",\n                \"bulkActionId\": \"6666be49b40dd23fdfde4ec9\",\n                \"entityType\": \"Contact\",\n                \"status\": \"completed\",\n                \"successCount\": 0,\n                \"failureCount\": 0,\n                \"skippedCount\": 1,\n                \"scheduledFor\": null,\n                \"createdAt\": \"2025-06-10T08:50:17.731Z\"\n            },\n            {\n                \"accountId\": \"12345\",\n                \"bulkActionId\": \"6666c2c39645513e8aa9cc2c\",\n                \"entityType\": \"Contact\",\n                \"status\": \"queued\",\n                \"successCount\": 0,\n                \"failureCount\": 0,\n                \"skippedCount\": 0,\n                \"scheduledFor\": null,\n                \"createdAt\": \"2025-06-10T09:09:23.057Z\"\n            },\n            {\n                \"accountId\": \"12345\",\n                \"bulkActionId\": \"6666c312cf54db5f0849434a\",\n                \"entityType\": \"Contact\",\n                \"status\": \"queued\",\n                \"successCount\": 0,\n                \"failureCount\": 0,\n                \"skippedCount\": 0,\n                \"scheduledFor\": null,\n                \"createdAt\": \"2025-06-10T09:10:42.096Z\"\n            },\n            {\n                \"accountId\": \"12345\",\n                \"bulkActionId\": \"6666c4b2f3b54cbc98a3d1eb\",\n                \"entityType\": \"Contact\",\n                \"status\": \"queued\",\n                \"successCount\": 0,\n                \"failureCount\": 0,\n                \"skippedCount\": 0,\n                \"scheduledFor\": null,\n                \"createdAt\": \"2025-06-10T09:17:38.089Z\"\n            },\n            {\n                \"accountId\": \"12345\",\n                \"bulkActionId\": \"6666c4fb6cbd9a14c3a3fb69\",\n                \"entityType\": \"Contact\",\n                \"status\": \"queued\",\n                \"successCount\": 0,\n                \"failureCount\": 0,\n                \"skippedCount\": 0,\n                \"scheduledFor\": null,\n                \"createdAt\": \"2025-06-10T09:18:51.087Z\"\n            },\n            {\n                \"accountId\": \"12345\",\n                \"bulkActionId\": \"6666c56b87f2001a802205fb\",\n                \"entityType\": \"Contact\",\n                \"status\": \"queued\",\n                \"successCount\": 0,\n                \"failureCount\": 0,\n                \"skippedCount\": 0,\n                \"scheduledFor\": null,\n                \"createdAt\": \"2025-06-10T09:20:43.356Z\"\n            }\n        ],\n        \"total\": 33,\n        \"page\": 1,\n        \"limit\": 10,\n        \"totalPages\": 4\n    }\n}"
+				},
+				{
+					"name": "Get All Bulk Actions",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/bulk-actions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bulk-actions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 11 Jun 2025 14:35:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "308"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "89225348698491c2-DEL"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e7-LY3s/whZSmKYATwWDxWAeZCl/JM\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "b3482b9f-01d6-4798"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"actions\": [\n            {\n                \"accountId\": \"1234567\",\n                \"bulkActionId\": \"66685f3cd8aed2f1bbeea901\",\n                \"entityType\": \"Contact\",\n                \"status\": \"completed\",\n                \"successCount\": 4,\n                \"failureCount\": 0,\n                \"skippedCount\": 0,\n                \"scheduledFor\": null,\n                \"createdAt\": \"2025-06-11T14:29:16.139Z\"\n            },\n            {\n                \"accountId\": \"1234567\",\n                \"bulkActionId\": \"66685f77d8aed2f1bbeea908\",\n                \"entityType\": \"Contact\",\n                \"status\": \"completed\",\n                \"successCount\": 0,\n                \"failureCount\": 0,\n                \"skippedCount\": 4,\n                \"scheduledFor\": null,\n                \"createdAt\": \"2025-06-11T14:30:15.295Z\"\n            },\n            {\n                \"accountId\": \"90230238020\",\n                \"bulkActionId\": \"6668605fd8aed2f1bbeea925\",\n                \"entityType\": \"Task\",\n                \"status\": \"completed\",\n                \"successCount\": 0,\n                \"failureCount\": 2,\n                \"skippedCount\": 0,\n                \"scheduledFor\": null,\n                \"createdAt\": \"2025-06-11T14:34:07.342Z\"\n            }\n        ],\n        \"total\": 3,\n        \"page\": 1,\n        \"limit\": 10,\n        \"totalPages\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Details of specific Bulk Action",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/bulk-actions/{{actionId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"bulk-actions",
+						"{{actionId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Details of specific Bulk Action - Task",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/bulk-actions/{{actionId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bulk-actions",
+								"{{actionId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "598"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"256-Ns1iZcJmldgpTObdG8LVuUbH1Cc\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Jun 2025 13:12:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"6666fb8a3a5211c73c123e6f\",\n        \"accountId\": \"90230238020\",\n        \"entityType\": \"Task\",\n        \"entitiesToUpdate\": [\n            {\n                \"_id\": \"6666511bcb80be240910405a\",\n                \"title\": \"Call Mohit\",\n                \"description\": \"Setup a call with Mohit on 20th of June at 11AM\",\n                \"version\": 0\n            },\n            {\n                \"_id\": \"6666511bcb80be240910405b\",\n                \"title\": \"Interview with Pankaj\",\n                \"description\": \"Setup an interview with Pankaj on 15th of June 3pm\",\n                \"version\": 1\n            }\n        ],\n        \"status\": \"queued\",\n        \"successCount\": 0,\n        \"failureCount\": 0,\n        \"skippedCount\": 0,\n        \"actionErrors\": [],\n        \"scheduledFor\": \"2025-06-15T15:30:55.000Z\",\n        \"sequenceNumber\": 0,\n        \"createdAt\": \"2025-06-10T13:11:38.114Z\",\n        \"__v\": 0\n    }\n}"
+				},
+				{
+					"name": "Get Details of specific Bulk Action - Contact",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/bulk-actions/{{actionId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bulk-actions",
+								"{{actionId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 11 Jun 2025 14:32:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "400"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "89224f351be391c2-DEL"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c9-VLW/zosRBeE5+CpnznP0EBNmn9s\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "745d4bc0-7bc6-4bc7"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"66685f3cd8aed2f1bbeea901\",\n        \"accountId\": \"1234567\",\n        \"entityType\": \"Contact\",\n        \"entitiesToUpdate\": [\n            {\n                \"_id\": \"666813f5278b6fc12bca7250\",\n                \"name\": \"Gail Macejkovic I\",\n                \"email\": \"Eleanore2234@hotmail.com\",\n                \"version\": 0\n            },\n            {\n                \"_id\": \"666813f5278b6fc12bca7251\",\n                \"name\": \"Jarret Heller\",\n                \"Phone\": \"1-403-479-8661 0\",\n                \"version\": 0\n            },\n            {\n                \"_id\": \"666813f5278b6fc12bca7252\",\n                \"name\": \"Sherry Prosacco II\",\n                \"email\": \"Emerson.Hessel9@hotmail.com\",\n                \"version\": 0\n            },\n            {\n                \"_id\": \"666813f5278b6fc12bca7253\",\n                \"name\": \"Jarret Heller\",\n                \"Phone\": \"349-262 29229\",\n                \"version\": 0\n            }\n        ],\n        \"status\": \"completed\",\n        \"successCount\": 4,\n        \"failureCount\": 0,\n        \"skippedCount\": 0,\n        \"actionErrors\": [],\n        \"scheduledFor\": null,\n        \"sequenceNumber\": 0,\n        \"createdAt\": \"2025-06-11T14:29:16.139Z\",\n        \"__v\": 0\n    }\n}"
+				},
+				{
+					"name": "Get Details of specific Bulk Action - Entity Doesn't Exist",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/bulk-actions/{{actionId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bulk-actions",
+								"{{actionId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 11 Jun 2025 14:34:13 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "417"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "89225214c88a91c2-DEL"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e3-dDEm9EqQqloW1pO5Ph4YATX4jx4\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "ef598bdb-a594-41a8"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"6668605fd8aed2f1bbeea925\",\n        \"accountId\": \"90230238020\",\n        \"entityType\": \"Task\",\n        \"entitiesToUpdate\": [\n            {\n                \"_id\": \"6666511bcb80be240910405a\",\n                \"title\": \"Call Mohit\",\n                \"description\": \"Setup a call with Mohit tomorrow at 11AM\",\n                \"version\": 0\n            },\n            {\n                \"_id\": \"6666511bcb80be240910405b\",\n                \"title\": \"Interview with Pankaj\",\n                \"description\": \"Setup an interview with Pankaj on 15th of June 3pm\",\n                \"version\": 1\n            }\n        ],\n        \"status\": \"completed\",\n        \"successCount\": 0,\n        \"failureCount\": 2,\n        \"skippedCount\": 0,\n        \"actionErrors\": [\n            \"{\\\"entityId\\\":\\\"6666511bcb80be240910405a\\\",\\\"message\\\":\\\"Entity doesn't exists\\\"}\",\n            \"{\\\"entityId\\\":\\\"6666511bcb80be240910405b\\\",\\\"message\\\":\\\"Entity doesn't exists\\\"}\"\n        ],\n        \"scheduledFor\": null,\n        \"sequenceNumber\": 0,\n        \"createdAt\": \"2025-06-11T14:34:07.342Z\",\n        \"__v\": 0\n    }\n}"
+				},
+				{
+					"name": "Get Details of specific Bulk Action - Task Scheduled",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/bulk-actions/{{actionId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bulk-actions",
+								"{{actionId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 11 Jun 2025 14:41:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "402"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "89225ca98bf891c2-DEL"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2ce-3tzdMAZl81QzWntJi15H7I7daiI\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "a71840d3-f7a1-4cb9"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"666861f3d8aed2f1bbeea95d\",\n        \"accountId\": \"90230238020\",\n        \"entityType\": \"Task\",\n        \"entitiesToUpdate\": [\n            {\n                \"_id\": \"66685aab9b4eaab541c209c0\",\n                \"title\": \"Call Mohit\",\n                \"description\": \"Setup a call with Mohit on 20th of June at 11AM\",\n                \"version\": 0\n            },\n            {\n                \"_id\": \"66685aab9b4eaab541c209c1\",\n                \"title\": \"Interview with Pankaj\",\n                \"description\": \"Setup an interview with Pankaj on 15th of June 3pm\",\n                \"version\": 0\n            },\n            {\n                \"_id\": \"66685aab9b4eaab541c209c2\",\n                \"title\": \"Title Random\",\n                \"description\": \"Description for random title task\",\n                \"version\": 1\n            }\n        ],\n        \"status\": \"queued\",\n        \"successCount\": 0,\n        \"failureCount\": 0,\n        \"skippedCount\": 0,\n        \"actionErrors\": [],\n        \"scheduledFor\": \"2025-06-15T15:30:55.000Z\",\n        \"sequenceNumber\": 0,\n        \"createdAt\": \"2025-06-11T14:40:51.537Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Stats of specific Bulk Action",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/bulk-actions/{{actionId}}/stats",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"bulk-actions",
+						"{{actionId}}",
+						"stats"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Stats of specific Bulk Action",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/bulk-actions/{{actionId}}/stats",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bulk-actions",
+								"{{actionId}}",
+								"stats"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "248"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f8-RKSQ2s3KZhLyI9hj8owkJzmFFMo\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Jun 2025 13:27:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"actionId\": \"6666ff32d6b0276939864815\",\n        \"successCount\": 1,\n        \"failureCount\": 1,\n        \"skippedCount\": 0,\n        \"errors\": [\n            \"{\\\"entityId\\\":\\\"6666511bcb80be240910405a\\\",\\\"message\\\":\\\"Entity doesn't exists\\\"}\"\n        ],\n        \"createdAt\": \"2025-06-10T13:27:14.128Z\"\n    }\n}"
+				},
+				{
+					"name": "Get Stats of specific Bulk Action - Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/bulk-actions/{{actionId}}/stats",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bulk-actions",
+								"{{actionId}}",
+								"stats"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 11 Jun 2025 14:36:04 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "154"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "892254c91a8e91c2-DEL"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a5-SksCrbQFPT62I/9aERVb41RwcD0\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "08185862-0917-4569"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"actionId\": \"66685f3cd8aed2f1bbeea901\",\n        \"successCount\": 4,\n        \"failureCount\": 0,\n        \"skippedCount\": 0,\n        \"errors\": [],\n        \"createdAt\": \"2025-06-11T14:29:16.139Z\"\n    }\n}"
+				},
+				{
+					"name": "Get Stats of specific Bulk Action - Skipped",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/bulk-actions/{{actionId}}/stats",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bulk-actions",
+								"{{actionId}}",
+								"stats"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 11 Jun 2025 14:36:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "239"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "892255d6fbae91c2-DEL"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1de-gZ9cUuu7HO9EEIrXVCuTZxAS9ds\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "ab4bfafc-57a2-44b0"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"actionId\": \"66685f77d8aed2f1bbeea908\",\n        \"successCount\": 0,\n        \"failureCount\": 0,\n        \"skippedCount\": 4,\n        \"errors\": [\n            \"{\\\"entityId\\\":\\\"666813f5278b6fc12bca7253\\\",\\\"message\\\":\\\"Version mismatch\\\"}\",\n            \"{\\\"entityId\\\":\\\"666813f5278b6fc12bca7251\\\",\\\"message\\\":\\\"Version mismatch\\\"}\",\n            \"{\\\"entityId\\\":\\\"666813f5278b6fc12bca7252\\\",\\\"message\\\":\\\"Duplicate Email\\\"}\",\n            \"{\\\"entityId\\\":\\\"666813f5278b6fc12bca7250\\\",\\\"message\\\":\\\"Duplicate Email\\\"}\"\n        ],\n        \"createdAt\": \"2025-06-11T14:30:15.295Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Logs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/logs?level=WARN",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"logs"
+					],
+					"query": [
+						{
+							"key": "level",
+							"value": "WARN"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Filtered Logs",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/logs?from=2025-06-10T10:18:28.354Z&to=2025-06-12T16:18:23.354Z",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"logs"
+							],
+							"query": [
+								{
+									"key": "level",
+									"value": "WARN",
+									"disabled": true
+								},
+								{
+									"key": "from",
+									"value": "2025-06-10T10:18:28.354Z"
+								},
+								{
+									"key": "to",
+									"value": "2025-06-12T16:18:23.354Z"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 11 Jun 2025 14:38:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "723"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "892257b0fbc491c2-DEL"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d4c-EwedNiwhPunQUOLxE9zrT6UGPPg\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "79910de5-5299-4dbe"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"66685e90d8aed2f1bbeea8fb\",\n        \"level\": \"LOG\",\n        \"message\": \"DELETE /logs/ INFO 200 229ms\",\n        \"createdAt\": \"2025-06-11T14:26:24.786Z\",\n        \"updatedAt\": \"2025-06-11T14:26:24.786Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685e95d8aed2f1bbeea8fe\",\n        \"level\": \"LOG\",\n        \"message\": \"GET /logs/ INFO 200 220ms\",\n        \"createdAt\": \"2025-06-11T14:26:29.294Z\",\n        \"updatedAt\": \"2025-06-11T14:26:29.294Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685f3cd8aed2f1bbeea902\",\n        \"level\": \"LOG\",\n        \"message\": \"{\\\"bulkAction\\\":{\\\"accountId\\\":\\\"1234567\\\",\\\"entityType\\\":\\\"Contact\\\",\\\"entitiesToUpdate\\\":[{\\\"_id\\\":\\\"666813f5278b6fc12bca7250\\\",\\\"name\\\":\\\"Gail Macejkovic I\\\",\\\"email\\\":\\\"Eleanore2234@hotmail.com\\\",\\\"version\\\":0},{\\\"_id\\\":\\\"666813f5278b6fc12bca7251\\\",\\\"name\\\":\\\"Jarret Heller\\\",\\\"Phone\\\":\\\"1-403-479-8661 0\\\",\\\"version\\\":0},{\\\"_id\\\":\\\"666813f5278b6fc12bca7252\\\",\\\"name\\\":\\\"Sherry Prosacco II\\\",\\\"email\\\":\\\"Emerson.Hessel9@hotmail.com\\\",\\\"version\\\":0},{\\\"_id\\\":\\\"666813f5278b6fc12bca7253\\\",\\\"name\\\":\\\"Jarret Heller\\\",\\\"Phone\\\":\\\"349-262 29229\\\",\\\"version\\\":0}],\\\"status\\\":\\\"queued\\\",\\\"successCount\\\":0,\\\"failureCount\\\":0,\\\"skippedCount\\\":0,\\\"actionErrors\\\":[],\\\"scheduledFor\\\":null,\\\"sequenceNumber\\\":0,\\\"_id\\\":\\\"66685f3cd8aed2f1bbeea901\\\",\\\"createdAt\\\":\\\"2025-06-11T14:29:16.139Z\\\"}}\",\n        \"createdAt\": \"2025-06-11T14:29:16.140Z\",\n        \"updatedAt\": \"2025-06-11T14:29:16.140Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685f3cd8aed2f1bbeea905\",\n        \"level\": \"LOG\",\n        \"message\": \"POST /bulk-actions/ INFO 201 895ms\",\n        \"createdAt\": \"2025-06-11T14:29:16.596Z\",\n        \"updatedAt\": \"2025-06-11T14:29:16.596Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685f77d8aed2f1bbeea909\",\n        \"level\": \"LOG\",\n        \"message\": \"{\\\"bulkAction\\\":{\\\"accountId\\\":\\\"1234567\\\",\\\"entityType\\\":\\\"Contact\\\",\\\"entitiesToUpdate\\\":[{\\\"_id\\\":\\\"666813f5278b6fc12bca7250\\\",\\\"name\\\":\\\"Gail Macejkovic I\\\",\\\"email\\\":\\\"Eleanore2234@hotmail.com\\\",\\\"version\\\":0},{\\\"_id\\\":\\\"666813f5278b6fc12bca7251\\\",\\\"name\\\":\\\"Jarret Heller\\\",\\\"Phone\\\":\\\"1-403-479-8661 0\\\",\\\"version\\\":0},{\\\"_id\\\":\\\"666813f5278b6fc12bca7252\\\",\\\"name\\\":\\\"Sherry Prosacco II\\\",\\\"email\\\":\\\"Emerson.Hessel9@hotmail.com\\\",\\\"version\\\":0},{\\\"_id\\\":\\\"666813f5278b6fc12bca7253\\\",\\\"name\\\":\\\"Jarret Heller\\\",\\\"Phone\\\":\\\"349-262 29229\\\",\\\"version\\\":0}],\\\"status\\\":\\\"queued\\\",\\\"successCount\\\":0,\\\"failureCount\\\":0,\\\"skippedCount\\\":0,\\\"actionErrors\\\":[],\\\"scheduledFor\\\":null,\\\"sequenceNumber\\\":0,\\\"_id\\\":\\\"66685f77d8aed2f1bbeea908\\\",\\\"createdAt\\\":\\\"2025-06-11T14:30:15.295Z\\\"}}\",\n        \"createdAt\": \"2025-06-11T14:30:15.296Z\",\n        \"updatedAt\": \"2025-06-11T14:30:15.296Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685f77d8aed2f1bbeea90c\",\n        \"level\": \"LOG\",\n        \"message\": \"POST /bulk-actions/ INFO 201 877ms\",\n        \"createdAt\": \"2025-06-11T14:30:15.739Z\",\n        \"updatedAt\": \"2025-06-11T14:30:15.739Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685f8cd8aed2f1bbeea919\",\n        \"level\": \"LOG\",\n        \"message\": \"GET /bulk-actions/66685f77d8aed2f1bbeea908/ INFO 200 223ms\",\n        \"createdAt\": \"2025-06-11T14:30:36.867Z\",\n        \"updatedAt\": \"2025-06-11T14:30:36.867Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685f9ed8aed2f1bbeea91c\",\n        \"level\": \"LOG\",\n        \"message\": \"GET /bulk-actions/66685f77d8aed2f1bbeea908/ INFO 200 223ms\",\n        \"createdAt\": \"2025-06-11T14:30:54.195Z\",\n        \"updatedAt\": \"2025-06-11T14:30:54.195Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685fa7d8aed2f1bbeea91f\",\n        \"level\": \"LOG\",\n        \"message\": \"GET /bulk-actions/66685f77d8aed2f1bbeea908/ INFO 200 223ms\",\n        \"createdAt\": \"2025-06-11T14:31:03.133Z\",\n        \"updatedAt\": \"2025-06-11T14:31:03.133Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685fefd8aed2f1bbeea922\",\n        \"level\": \"LOG\",\n        \"message\": \"GET /bulk-actions/66685f3cd8aed2f1bbeea901/ INFO 200 223ms\",\n        \"createdAt\": \"2025-06-11T14:32:15.267Z\",\n        \"updatedAt\": \"2025-06-11T14:32:15.267Z\",\n        \"__v\": 0\n    }\n]"
+				},
+				{
+					"name": "Get Logs - All Logs",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/logs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"logs"
+							],
+							"query": [
+								{
+									"key": "level",
+									"value": "WARN",
+									"disabled": true
+								},
+								{
+									"key": "from",
+									"value": "2025-06-10T10:18:28.354Z",
+									"disabled": true
+								},
+								{
+									"key": "to",
+									"value": "2025-06-12T16:18:23.354Z",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 11 Jun 2025 14:46:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "723"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "CF-Ray",
+							"value": "8922635f8dae91c2-DEL"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d4c-EwedNiwhPunQUOLxE9zrT6UGPPg\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "rndr-id",
+							"value": "ec7f673a-1559-4b2b"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"66685e90d8aed2f1bbeea8fb\",\n        \"level\": \"LOG\",\n        \"message\": \"DELETE /logs/ INFO 200 229ms\",\n        \"createdAt\": \"2025-06-11T14:26:24.786Z\",\n        \"updatedAt\": \"2025-06-11T14:26:24.786Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685e95d8aed2f1bbeea8fe\",\n        \"level\": \"LOG\",\n        \"message\": \"GET /logs/ INFO 200 220ms\",\n        \"createdAt\": \"2025-06-11T14:26:29.294Z\",\n        \"updatedAt\": \"2025-06-11T14:26:29.294Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685f3cd8aed2f1bbeea902\",\n        \"level\": \"LOG\",\n        \"message\": \"{\\\"bulkAction\\\":{\\\"accountId\\\":\\\"1234567\\\",\\\"entityType\\\":\\\"Contact\\\",\\\"entitiesToUpdate\\\":[{\\\"_id\\\":\\\"666813f5278b6fc12bca7250\\\",\\\"name\\\":\\\"Gail Macejkovic I\\\",\\\"email\\\":\\\"Eleanore2234@hotmail.com\\\",\\\"version\\\":0},{\\\"_id\\\":\\\"666813f5278b6fc12bca7251\\\",\\\"name\\\":\\\"Jarret Heller\\\",\\\"Phone\\\":\\\"1-403-479-8661 0\\\",\\\"version\\\":0},{\\\"_id\\\":\\\"666813f5278b6fc12bca7252\\\",\\\"name\\\":\\\"Sherry Prosacco II\\\",\\\"email\\\":\\\"Emerson.Hessel9@hotmail.com\\\",\\\"version\\\":0},{\\\"_id\\\":\\\"666813f5278b6fc12bca7253\\\",\\\"name\\\":\\\"Jarret Heller\\\",\\\"Phone\\\":\\\"349-262 29229\\\",\\\"version\\\":0}],\\\"status\\\":\\\"queued\\\",\\\"successCount\\\":0,\\\"failureCount\\\":0,\\\"skippedCount\\\":0,\\\"actionErrors\\\":[],\\\"scheduledFor\\\":null,\\\"sequenceNumber\\\":0,\\\"_id\\\":\\\"66685f3cd8aed2f1bbeea901\\\",\\\"createdAt\\\":\\\"2025-06-11T14:29:16.139Z\\\"}}\",\n        \"createdAt\": \"2025-06-11T14:29:16.140Z\",\n        \"updatedAt\": \"2025-06-11T14:29:16.140Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685f3cd8aed2f1bbeea905\",\n        \"level\": \"LOG\",\n        \"message\": \"POST /bulk-actions/ INFO 201 895ms\",\n        \"createdAt\": \"2025-06-11T14:29:16.596Z\",\n        \"updatedAt\": \"2025-06-11T14:29:16.596Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685f77d8aed2f1bbeea909\",\n        \"level\": \"LOG\",\n        \"message\": \"{\\\"bulkAction\\\":{\\\"accountId\\\":\\\"1234567\\\",\\\"entityType\\\":\\\"Contact\\\",\\\"entitiesToUpdate\\\":[{\\\"_id\\\":\\\"666813f5278b6fc12bca7250\\\",\\\"name\\\":\\\"Gail Macejkovic I\\\",\\\"email\\\":\\\"Eleanore2234@hotmail.com\\\",\\\"version\\\":0},{\\\"_id\\\":\\\"666813f5278b6fc12bca7251\\\",\\\"name\\\":\\\"Jarret Heller\\\",\\\"Phone\\\":\\\"1-403-479-8661 0\\\",\\\"version\\\":0},{\\\"_id\\\":\\\"666813f5278b6fc12bca7252\\\",\\\"name\\\":\\\"Sherry Prosacco II\\\",\\\"email\\\":\\\"Emerson.Hessel9@hotmail.com\\\",\\\"version\\\":0},{\\\"_id\\\":\\\"666813f5278b6fc12bca7253\\\",\\\"name\\\":\\\"Jarret Heller\\\",\\\"Phone\\\":\\\"349-262 29229\\\",\\\"version\\\":0}],\\\"status\\\":\\\"queued\\\",\\\"successCount\\\":0,\\\"failureCount\\\":0,\\\"skippedCount\\\":0,\\\"actionErrors\\\":[],\\\"scheduledFor\\\":null,\\\"sequenceNumber\\\":0,\\\"_id\\\":\\\"66685f77d8aed2f1bbeea908\\\",\\\"createdAt\\\":\\\"2025-06-11T14:30:15.295Z\\\"}}\",\n        \"createdAt\": \"2025-06-11T14:30:15.296Z\",\n        \"updatedAt\": \"2025-06-11T14:30:15.296Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685f77d8aed2f1bbeea90c\",\n        \"level\": \"LOG\",\n        \"message\": \"POST /bulk-actions/ INFO 201 877ms\",\n        \"createdAt\": \"2025-06-11T14:30:15.739Z\",\n        \"updatedAt\": \"2025-06-11T14:30:15.739Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685f8cd8aed2f1bbeea919\",\n        \"level\": \"LOG\",\n        \"message\": \"GET /bulk-actions/66685f77d8aed2f1bbeea908/ INFO 200 223ms\",\n        \"createdAt\": \"2025-06-11T14:30:36.867Z\",\n        \"updatedAt\": \"2025-06-11T14:30:36.867Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685f9ed8aed2f1bbeea91c\",\n        \"level\": \"LOG\",\n        \"message\": \"GET /bulk-actions/66685f77d8aed2f1bbeea908/ INFO 200 223ms\",\n        \"createdAt\": \"2025-06-11T14:30:54.195Z\",\n        \"updatedAt\": \"2025-06-11T14:30:54.195Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685fa7d8aed2f1bbeea91f\",\n        \"level\": \"LOG\",\n        \"message\": \"GET /bulk-actions/66685f77d8aed2f1bbeea908/ INFO 200 223ms\",\n        \"createdAt\": \"2025-06-11T14:31:03.133Z\",\n        \"updatedAt\": \"2025-06-11T14:31:03.133Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"66685fefd8aed2f1bbeea922\",\n        \"level\": \"LOG\",\n        \"message\": \"GET /bulk-actions/66685f3cd8aed2f1bbeea901/ INFO 200 223ms\",\n        \"createdAt\": \"2025-06-11T14:32:15.267Z\",\n        \"updatedAt\": \"2025-06-11T14:32:15.267Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete Logs",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/logs",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"logs"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Logs",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/logs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"logs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-PyYLqBwnHZllpuyq+ElHBjzVBQU\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Jun 2025 13:09:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Logs deleted successfully\"\n}"
+				}
+			]
+		}
+	]
+}
